@@ -16,3 +16,6 @@ if [ $cantidad -gt 0 ]; then
 else
 	echo "Se ingreso un numero menor o igual que 0" && exit 1
 fi
+
+tar -czvf imagenes.tar.gz *.jpg
+sha256sum archivo.tar.gz > sumaVerificadora.txt
