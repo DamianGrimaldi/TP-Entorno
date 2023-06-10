@@ -8,7 +8,9 @@ while [ $op -ne 0 ]; do
 	case $op in
 		1) ./generar.sh
 		;;
-		2) ./descargar.sh
+		2) read -p $'Ingrese el nombre del archivo de donde estan las imagenes\n' p1
+		read -p $'Ingrese el nombre del archivo de la suma de verificacion\n' p2
+		./descargar.sh $p1 $p2
 		;;
 		3) ./procesar.sh
 		;;
