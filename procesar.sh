@@ -1,13 +1,11 @@
-#! /bin/bash
+#!/bin/bash
 
 while IFS= read -r line; do
-	echo "${line}.jpg"
+    echo "${line}.jpg"
 done < nombres.txt > nombre1.txt
 
-for i in [A-Z]*.jpg; do
-	for j in nombre1.txt; do
-		if [ $i = $j ]; then
-			convert "$i" -gravity center -resize 512x512^ -extent 512x512 "$i"
-		fi
-	done
-done
+while IFS= read -r file; do
+    if [ -f "$file" ]; then
+        convert "$file" -gravity center -resize 512x512^ -extent 512x512 "$file"
+    fi
+done < nombre1.txt
