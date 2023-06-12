@@ -1,5 +1,7 @@
 #! /bin/bash
 
+clear
+
 cont1=0
 cont2=0
 
@@ -15,3 +17,7 @@ while IFS= read -r line; do
 done < <(find . -name "*.jpg")
 
 echo "La cantindade de personas femeninas son: $cont1 y de masculinas son: $cont2" >> Personas.txt
+
+tar -czvf imagenes.tar.gz *.jpg && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg
+
+sha256sum imagenes.tar.gz | cut -d ' ' -f 1 > sumaVerificadora.txt && echo Se creo el archivo de la suma de verificacion
