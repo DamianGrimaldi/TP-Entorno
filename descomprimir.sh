@@ -4,7 +4,7 @@ clear
 
 [ $# -ne 2 ] && echo error de la cantidad de argumentos && exit 1
 
-if [ -f $1 && $2 ]; then
+if [ -f $1 ] && [ -f $2 ]; then
 	
 	imagenes=$(sha256sum $1 | cut -d ' ' -f 1)
 	verficacion=$(cat $2)

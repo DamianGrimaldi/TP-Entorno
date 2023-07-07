@@ -19,6 +19,6 @@ done
 
 echo "La cantindad de personas que termian en a: $cont1" >> TerminanEnA.txt
 
-tar -czvf imagenes.tar.gz *.jpg *.txt && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg
+tar -czvf imagenes.tar.gz *.jpg *.txt && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg *.txt
 
 sha256sum imagenes.tar.gz | cut -d ' ' -f 1 > sumaVerificadora.txt && echo Se creo el archivo de la suma de verificacion
