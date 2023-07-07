@@ -3,7 +3,6 @@
 clear
 
 cont1=0
-cont2=0
 
 for archivo in *.jpg; do
 	nombreArchivo=$(basename "$archivo")
@@ -13,15 +12,13 @@ for archivo in *.jpg; do
 	else
 		if echo $nombreArchivo | grep -Eq "_[a-z]+a"; then
 			cont1=$((cont1+1))
-		else
-			cont2=$((cont2+1))
 		fi
 	fi
-	echo "$nombreArchivo" >> Personas.txt
+	echo "$nombreArchivo" >> NombresImagenes.txt
 done
 
-echo "La cantindade de personas femeninas son: $cont1 y de masculinas son: $cont2" >> Personas.txt
+echo "La cantindad de personas que termian en a: $cont1" >> TerminanEnA.txt
 
-tar -czvf imagenes.tar.gz *.jpg && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg
+tar -czvf imagenes.tar.gz *.jpg *.txt && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg
 
 sha256sum imagenes.tar.gz | cut -d ' ' -f 1 > sumaVerificadora.txt && echo Se creo el archivo de la suma de verificacion
