@@ -1,9 +1,13 @@
-FROM lubuntu:23.04
+FROM ubuntu
 
-RUN sudo apt-get update && sudo apt --fix-bronken install && sudo apt-get install imagemagick
+MAINTAINER EquipoRocker
 
-RUN git clone https://github.com/DamianGrimaldi/TP-Entorno.git cd ~/TP
+RUN apt-get update && apt install -y git
 
-WORKDIR ~/TP
+RUN apt-get install imagemagick
+
+RUN git clone https://github.com/DamianGrimaldi/TP-Entorno.git /home/TP
+
+WORKDIR /home/TP
 
 CMD ["bash", "~/menu.sh"]
