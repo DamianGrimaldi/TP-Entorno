@@ -5,16 +5,20 @@ clear
 cont1=0
 cont2=0
 
-while IFS= read -r line; do
-	filename=$(basename "$line")
-	filename="${filename%.*}"
-	if echo "$filename" | grep -Eq "a"; then
+for archivo in *.jpg; do
+	nombreArchivo=$(basename "$archivo")
+	nombreArchivo="${nombreArchivo%.*}"
+	if echo $nombreArchivo | grep -Eq "[A-Z][a-z]+a_"; then
 		cont1=$((cont1+1))
 	else
-		cont2=$((cont2+1))
+		if echo $nombreArchivo | grep -Eq "_[a-z]+a"; then
+			cont1=$((cont1+1))
+		else
+			cont2=$((cont2+1))
+		fi
 	fi
-	echo $line >> Personas.txt
-done < <(find . -name "*.jpg")
+	echo "$nombreArchivo" >> Personas.txt
+done
 
 echo "La cantindade de personas femeninas son: $cont1 y de masculinas son: $cont2" >> Personas.txt
 

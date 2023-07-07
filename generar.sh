@@ -13,7 +13,7 @@ if [ $cantidad -gt 0 ]; then
 		
 		if [ $nombre != *.jpg ] ;then
 			
-			wget -O $nombre.jpg https://source.unsplash.com/random/900%C3%97700/?person &> /dev/null
+			wget -O $nombre.jpg https://thispersondoesnotexist.com/ &> /dev/null
 			sleep 10s
 			echo La imagen $nombre.jpg se descargo
 			cont=$(($cont + 1))
