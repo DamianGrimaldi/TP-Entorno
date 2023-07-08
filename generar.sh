@@ -14,14 +14,16 @@ if [ $cantidad -gt 0 ]; then
 		if [[ $nombre != *.jpg ]];then
 			
 			wget -O $nombre.jpg https://thispersondoesnotexist.com/ &> /dev/null
-			sleep 10s
 			echo La imagen $nombre.jpg se descargo
+			sleep 10s
 			cont=$(($cont + 1))
 			
 		fi
 	done
 else
-	echo "Se ingreso un numero menor o igual que 0" && exit 1
+	echo "Se ingreso un numero menor o igual que 0"
+	sleep 3s
+	exit 1
 fi
 
 tar -czvf imagenes.tar.gz *.jpg && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg

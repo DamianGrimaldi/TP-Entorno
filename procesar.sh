@@ -12,4 +12,5 @@ while IFS= read -r file; do
     fi
 done < nombre1.txt
 
-rm nombre1.txt nombres.txt
+sleep 10s
+rm nombre1.txt

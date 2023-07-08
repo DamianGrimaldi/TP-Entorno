@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
-MAINTAINER EquipoRocker
+MAINTAINER Damian,Aylex,Brenda
 
-RUN apt-get update && apt install -y git
+RUN apt-get update && apt install -y git && apt-get install -y curl && apt-get install -y wget
 
 RUN apt-get install -y imagemagick
 
@@ -10,6 +10,6 @@ RUN git clone https://DamianGrimaldi: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@gi
 
 WORKDIR /home/TP
 
-CMD [mkdir salida]
+RUN mkdir /home/TP/salida
 
-CMD ["bash", "./menu.sh"]
+CMD ["bash", "/home/TP/menu.sh"]
