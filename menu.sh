@@ -25,5 +25,5 @@ while [ $op -ne 0 ]; do
 		clear
 		;;
 	esac
-	read -p $'1-Generar imagenes\n2-Descargar\n3-Procesar\n4-Comprimir\n0-Para terminar\n' op
+	read -p $'1-Generar imagenes\n2-Descargar\n3-Descomprimir\n4-Procesar\n5-Comprimir\n0-Para terminar\n' op
 done
