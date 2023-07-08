@@ -10,4 +10,6 @@ RUN git clone https://DamianGrimaldi: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@gi
 
 WORKDIR /home/TP
 
+CMD [mkdir salida]
+
 CMD ["bash", "./menu.sh"]
