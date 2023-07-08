@@ -23,6 +23,8 @@ done
 
 echo "La cantindad de personas que termian en a: $cont1" >> TerminanEnA.txt
 
+mkdir salida &> /dev/null
+
 tar -czvf imagenes.tar.gz *.jpg NombresImagenes.txt TerminanEnA.txt nombres.txt && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg *.txt
 mv imagenes.tar.gz salida/imagenes.tar.gz
 sleep 5s
