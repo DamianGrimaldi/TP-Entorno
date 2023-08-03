@@ -16,6 +16,8 @@ if [ $imagenes = $verficacion ]; then
 	exit 0
 else
 	echo Los archivos descargados no corresponde con la suma de verificacion
+ 	rm imagenes.tar.gz
+  	rm sumaVerificadora.txt
 	sleep 3s
 	exit 1
 fi
