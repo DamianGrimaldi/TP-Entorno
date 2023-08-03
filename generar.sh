@@ -22,7 +22,6 @@ if [ $cantidad -gt 0 ]; then
 else
 	echo "Se ingreso un numero menor o igual que 0"
 	sleep 3s
-	exit 1
 fi
 
 tar -czvf imagenes.tar.gz *.jpg && echo Se creo el archivo imagenes.tar.gz correctamente && rm *.jpg
