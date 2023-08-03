@@ -2,10 +2,6 @@
 
 clear
 
-if [ ! -f nombres.txt ]; then
-	curl https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv | tr ' ' '_' | cut -d ',' -f 1 | sed 's/.*/\u&/' > nombres.txt
-fi
-
 while IFS= read -r line; do
     echo "${line}.jpg"
 done < nombres.txt > nombre1.txt
