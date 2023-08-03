@@ -6,7 +6,6 @@ read -p $'Ingrese cuantas imagenes quieres descargar\n' cantidad
 
 if [ $cantidad -gt 0 ]; then
 	cont=1
-	curl https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv | tr ' ' '_' | cut -d ',' -f 1 | sed 's/.*/\u&/' > nombres.txt
 	while [ $cont -le $cantidad ]; do
 		
 		nombre=$( shuf -n 1 nombres.txt )
