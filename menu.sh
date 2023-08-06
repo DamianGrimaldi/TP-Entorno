@@ -2,10 +2,11 @@
 
 clear
 
+curl https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv | tr ' ' '_' | cut -d ',' -f 1 | sed 's/.*/\u&/' > nombres.txt
+
 read -p $'1-Generar imagenes\n2-Descargar\n3-Descomprimir\n4-Procesar\n5-Comprimir\n0-Para terminar\n' op
 
 while [ $op -ne 0 ]; do
-	curl https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv | tr ' ' '_' | cut -d ',' -f 1 | sed 's/.*/\u&/' > nombres.txt
 	case $op in
 		1) ./generar.sh
 		clear
