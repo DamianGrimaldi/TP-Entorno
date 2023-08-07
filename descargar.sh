@@ -4,8 +4,8 @@ clear
 
 [ $# -ne 2 ] && echo error de la cantidad de argumentos && exit 1
 
-wget -o imagenes.tar.gz $1
-wget -o sumaVerificadora.txt $2
+wget $1
+wget $2
 
 imagenes=$(sha256sum $1 | cut -d ' ' -f 1)
 verficacion=$(cat $2)
