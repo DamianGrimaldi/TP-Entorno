@@ -5,18 +5,9 @@ clear
 cont1=0
 
 for archivo in *.jpg; do
-	nombreArchivo=$(basename "$archivo")
-	nombreArchivo="${nombreArchivo%.*}"
-	if echo $nombreArchivo | grep -Eq "[A-Z][a-z]+a_"; then
-		if echo $nombreArchivo | grep -Eq "_[a-z]+a"; then
-			cont1=$((cont1+1))
-		else
-			cont1=$((cont1+1))
-		fi
-	else
-		if echo $nombreArchivo | grep -Eq "_[a-z]+a"; then
-			cont1=$((cont1+1))
-		fi
+	nombreArchivo=$(basename "$archivo" | cut -d '.' -f 1)
+	if echo $nombreArchivo | grep -Eq "a$_"; then
+		cont1=$((cont1+1))
 	fi
 	echo "$nombreArchivo" >> NombresImagenes.txt
 done
